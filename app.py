@@ -6,7 +6,7 @@ import os
 from tensorflow.keras.models import load_model
 from preprocess import preprocess_frame
 
-model = load_model("indian_model.h5")  
+model = load_model("indian_model")  
 labels = sorted(os.listdir("Indian")) 
 L_index = labels.index('L')
 penalty_factor = 0.5
