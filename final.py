@@ -83,7 +83,10 @@ history = model.fit(
 )
 
 # Save the trained model
-model.save("indian_model.h5")
+from keras.models import load_model
+from keras.layers import InputLayer
+
+model = load_model("indian_model.h5", custom_objects={"InputLayer": InputLayer})
 
 # Evaluate
 loss, acc = model.evaluate(X_val, y_val)
